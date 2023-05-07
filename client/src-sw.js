@@ -27,4 +27,21 @@ warmStrategyCache({
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
 // TODO: Implement asset caching
-registerRoute();
+registerRoute(  ({ request }) =>
+request.destination === 'style' ||
+request.destination === 'script' ||
+request.destination === 'font' ||
+request.destination === 'image',
+pageCache);
+
+offlineFallback({
+  url: '/offline.html',
+  plugins: [
+    new CacheableResponsePlugin({
+      statuses: [0, 200],
+    }),
+    new ExpirationPlugin({
+      maxAgeSeconds: 60 * 60 * 24 * 30, // cache for 30 days
+    }),
+  ],
+});
