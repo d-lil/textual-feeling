@@ -20,10 +20,9 @@
   ```md
   npm run start
   ```
-  
-  Otherwise, just visit the link below to the page. If you click the install button, you will be prompted to install the app and an icon for the app will appear on the desktop (as seen below).
 
-  https://definitely-not-malware.herokuapp.com/
+  Otherwise, just visit the link below to the page. If you click the install button, you will be prompted to install the app and an icon for the app will appear on the desktop (as seen below).
+  > This site performs best in the Chrome browser:  https://definitely-not-malware.herokuapp.com/
   
   ---
 
